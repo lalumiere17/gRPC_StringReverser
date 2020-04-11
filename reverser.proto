@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.grpc.reverser";
+option java_outer_classname = "ReverseProto";
+option objc_class_prefix = "RVS";
+
+package reverser;
+
+// The reversing string service definition.
+service Reverser {
+  // Sends a reversed string
+  rpc ReverseString (Request) returns (Response) {}
+}
+
+// The request message containing the string to reverse.
+message Request{
+  string string = 1;
+}
+
+// The response message containing the message with result of reverting
+message Response {
+  string message = 1;
+}
